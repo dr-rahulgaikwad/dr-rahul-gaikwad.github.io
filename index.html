@@ -740,7 +740,7 @@
     flex-grow: 1;
 }
 
-.read-more-btn {
+.video-card .read-more-btn {
     background: none;
     border: none;
     color: #6C63FF;
@@ -877,8 +877,9 @@
     grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
     gap: 1rem;
 }
-/* AWS Blogs Cards */
-.publications-subsection:nth-child(2) .pub-card {
+/* AWS Blogs & Medium Blogs Cards - shared compact style */
+.aws-blogs-section .pub-card,
+.medium-blogs-section .pub-card {
     background: #f8f9fa;
     border: 1px solid #e9ecef;
     border-radius: 8px;
@@ -889,55 +890,37 @@
     min-height: auto;
     height: fit-content;
 }
-.publications-subsection:nth-child(2) .pub-card:hover {
+.aws-blogs-section .pub-card:hover,
+.medium-blogs-section .pub-card:hover {
     background: #fff;
     border-color: #6C63FF;
     transform: translateY(-1px);
 }
-.publications-subsection:nth-child(2) .pub-card h4 {
+.aws-blogs-section .pub-card h4,
+.medium-blogs-section .pub-card h4 {
     margin: 0 0 6px;
     font-size: 0.95rem;
     color: #333;
     line-height: 1.3;
 }
-.publications-subsection:nth-child(2) .pub-card h4 a {
+.aws-blogs-section .pub-card h4 a,
+.medium-blogs-section .pub-card h4 a {
     color: #333;
     text-decoration: none;
 }
-.publications-subsection:nth-child(2) .pub-card h4 a:hover {
+.aws-blogs-section .pub-card h4 a:hover,
+.medium-blogs-section .pub-card h4 a:hover {
     color: #6C63FF;
 }
-.publications-subsection:nth-child(2) .pub-card span {
+.aws-blogs-section .pub-card span,
+.medium-blogs-section .pub-card span {
     font-size: 0.8rem;
     color: #666;
     line-height: 1.2;
     margin-top: auto;
 }
-.publications-subsection:nth-child(4) .pub-card:hover {
-    background: #fff;
-    border-color: #6C63FF;
-    transform: translateY(-1px);
-}
-.publications-subsection:nth-child(4) .pub-card h4 {
-    margin: 0 0 8px;
-    font-size: 1rem;
-    color: #333;
-}
-.publications-subsection:nth-child(4) .pub-card h4 a {
-    color: #333;
-    text-decoration: none;
-}
-.publications-subsection:nth-child(4) .pub-card h4 a:hover {
-    color: #6C63FF;
-}
-.publications-subsection:nth-child(4) .pub-card span {
-    font-size: 0.85rem;
-    color: #666;
-    line-height: 1.4;
-}
-
 /* AWS Prescriptive Guidance Cards */
-.publications-subsection:nth-child(3) .pub-card {
+.prescriptive-section .pub-card {
     background: #f8f9fa;
     border: 1px solid #e9ecef;
     border-radius: 8px;
@@ -945,38 +928,47 @@
     transition: all 0.2s ease;
     display: flex;
     flex-direction: column;
-    min-height: 200px;
+    min-height: auto;
 }
-.publications-subsection:nth-child(3) .pub-card:hover {
+.prescriptive-section .pub-card:hover {
     background: #fff;
     border-color: #6C63FF;
     transform: translateY(-1px);
 }
-.publications-subsection:nth-child(3) .pub-card h4 {
+.prescriptive-section .pub-card h4 {
     margin: 0 0 8px;
     font-size: 1rem;
     color: #333;
 }
-.publications-subsection:nth-child(3) .pub-card h4 a {
+.prescriptive-section .pub-card h4 a {
     color: #333;
     text-decoration: none;
 }
-.publications-subsection:nth-child(3) .pub-card h4 a:hover {
+.prescriptive-section .pub-card h4 a:hover {
     color: #6C63FF;
 }
-.publications-subsection:nth-child(3) .pub-card span {
+.prescriptive-section .pub-card span.summary-text {
     font-size: 0.85rem;
     color: #666;
     line-height: 1.4;
-    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+.prescriptive-section .pub-card span.summary-text.expanded {
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
 }
 
-/* AWS Community Blogs Cards */
+/* AWS Community Blogs Cards - same style as AWS Blogs */
 .publications-subsection:nth-child(4) .pub-card {
     background: #f8f9fa;
     border: 1px solid #e9ecef;
     border-radius: 8px;
-    padding: 15px;
+    padding: 12px;
     transition: all 0.2s ease;
     display: flex;
     flex-direction: column;
@@ -989,9 +981,10 @@
     transform: translateY(-1px);
 }
 .publications-subsection:nth-child(4) .pub-card h4 {
-    margin: 0 0 8px;
-    font-size: 1rem;
+    margin: 0 0 6px;
+    font-size: 0.95rem;
     color: #333;
+    line-height: 1.3;
 }
 .publications-subsection:nth-child(4) .pub-card h4 a {
     color: #333;
@@ -1001,9 +994,10 @@
     color: #6C63FF;
 }
 .publications-subsection:nth-child(4) .pub-card span {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #666;
-    line-height: 1.4;
+    line-height: 1.2;
+    margin-top: auto;
 }
 
 /* Other Publication Cards */
@@ -1040,41 +1034,31 @@
     line-height: 1.4;
     flex-grow: 1;
 }
-.pub-card .summary-text {
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 8px;
-}
-.pub-card .summary-text.expanded {
-    display: block;
-    -webkit-line-clamp: unset;
-}
 .pub-card span.summary-text {
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 .pub-card span.summary-text.expanded {
     display: block;
     -webkit-line-clamp: unset;
+    overflow: visible;
 }
-.read-more-btn {
-    background: #666;
+.pub-card .read-more-btn {
+    background: #6C63FF;
     color: white;
     border: none;
-    padding: 4px 8px;
+    padding: 4px 10px;
     font-size: 0.75rem;
     border-radius: 4px;
     cursor: pointer;
     align-self: flex-start;
-    margin-top: auto;
+    margin-top: 8px;
 }
-.read-more-btn:hover {
-    background: #555;
+.pub-card .read-more-btn:hover {
+    background: #5a54d6;
 }
 
 /* Code Samples Section - Same styling as Publications */
@@ -1404,7 +1388,7 @@
     
     <div class="profile-card">
         <h2>About Me</h2>
-        <p>I'm a transformational technology leader with <strong>15+</strong> years of experience driving innovation across Cloud, DevOps, AI/ML, and Generative AI. Holding a PhD in Artificial Intelligence for IT Operations (AIOps) from Savitribai Phule Pune University, along with MBA, MCA and <strong>35+</strong> technical certifications (including <strong>11×</strong> AWS, <strong>3×</strong> HashiCorp, Confluent Kafka, and Stanford ML), I blend deep technical expertise with strategic vision and business acumen.</p>
+        <p>I'm a transformational technology leader with <strong>15+</strong> years of experience driving innovation across Cloud, DevOps, AI/ML, and Generative AI. Holding a PhD in Artificial Intelligence for IT Operations (AIOps) from Savitribai Phule Pune University, along with MBA, MCA and <strong>35+</strong> technical certifications (including <strong>12×</strong> AWS, <strong>3×</strong> HashiCorp, Confluent Kafka, and Stanford ML), I blend deep technical expertise with strategic vision and business acumen.</p>
         <p>Currently serving as a Staff Resident Solutions Architect at IBM, I partner with enterprise CxOs and leadership teams across APAC to define and accelerate their cloud transformation journey using the HashiCorp product suite. My work focuses on enabling the Cloud Operating Model, helping organizations adopt and operationalize multi-cloud frameworks, and driving measurable business outcomes. I collaborate with global teams to provide strategic and technical guidance across automation, observability, and system administration, while supporting modernization and developer velocity initiatives.</p>
         <p>As a recognized thought leader, I delivered <strong>30+</strong> speaking sessions at events like AWS re:Invent, HashiConf, and IIT Bombay, and authored <strong>8</strong> AWS blogs, <strong>10</strong> prescriptive guidance, and <strong>15+</strong> code samples. My research includes <strong>8</strong> published papers and patents in IT system alert classification and event log mining.</p>
     </div>
@@ -1846,11 +1830,47 @@
     <h2>Awards & Achievements</h2>
     <div class="awards-container">
         <div class="awards-card">
+            <div class="awards-thumbnail"><img src="assets\ambassador.png" alt="AWS Ambassador" onclick="openImageModal('assets\ambassador.png')"></div>
+            <div class="awards-content">
+                <h3><a href="https://aws.amazon.com/partners/ambassadors/?ams%23interactive-card-vertical%23pattern-data-1736951101.search=dr.%20rahul">AWS Ambassador</a></h3>
+                <p>Recognized as an 𝗔𝗪𝗦 𝗔𝗺𝗯𝗮𝘀𝘀𝗮𝗱𝗼𝗿, among 305 professionals globally, and honored to be the first from HashiCorp to be part of this program. </p>
+                <p>The Amazon Web Services (AWS) 𝗔𝗺𝗯𝗮𝘀𝘀𝗮𝗱𝗼𝗿 𝗣𝗿𝗼𝗴𝗿𝗮𝗺 recognizes individuals who combine deep technical expertise with meaningful community impact through knowledge sharing, speaking, mentoring, and real-world contributions.</p>
+                <span>Issued by AWS | 2026</span>
+            </div>
+        </div>
+        <div class="awards-card">
+            <div class="awards-thumbnail"><img src="assets\CB.png" alt="AWS Community Builder" onclick="openImageModal('assets\CB.png')"></div>
+            <div class="awards-content">
+                <h3><a href="https://www.linkedin.com/posts/dr-rahul-gaikwad_awscommunitybuilders-aws-aiengineering-activity-7435248577343373312-WvnS?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlbbqwBURy054KT61oIoiRTs9E8dRHE3zE">AWS Community Builder</a></h3>
+                <p>Recognized as an 𝗔𝗪𝗦 𝗖𝗼𝗺𝗺𝘂𝗻𝗶𝘁𝘆 𝗕𝘂𝗶𝗹𝗱𝗲𝗿𝘀 in 𝗔𝗜 𝗘𝗻𝗴𝗶𝗻𝗲𝗲𝗿𝗶𝗻𝗴. </p>
+                <p>The Amazon Web Services (AWS) Community Builders program brings together passionate technologists from around the world who are dedicated to learning, sharing knowledge, and helping others grow in the cloud and AI ecosystem.</p>
+                <span>Issued by AWS | 2026</span>
+            </div>
+        </div>
+        <div class="awards-card">
+            <div class="awards-thumbnail"><img src="assets\golden_j.png" alt="AWS Golden Jacket" onclick="openImageModal('assets\golden_j.png')"></div>
+            <div class="awards-content">
+                <h3><a href="https://www.linkedin.com/posts/dr-rahul-gaikwad_aws-amazonwebservices-ai-activity-7433703815649882112-e0KI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlbbqwBURy054KT61oIoiRTs9E8dRHE3zE">AWS Golden Jacket</a></h3>
+                <p>Recognized as an 𝗔𝗪𝗦 𝗚𝗼𝗹𝗱𝗲𝗻𝗝𝗮𝗰𝗸𝗲𝘁 holder.</p>
+                <p>Completed all 12 currently active AWS GA certifications. This jacket represents years of customer commitment, disciplined learning, and many evenings and weekends invested in studies.</p>
+                <span>Issued by AWS | 2026</span>
+            </div>
+        </div>
+        <div class="awards-card">
+            <div class="awards-thumbnail"><img src="assets\top_icons_india.png" alt="Top Icons of India" onclick="openImageModal('assets\top_icons_india.png')"></div>
+            <div class="awards-content">
+                <h3><a href="https://www.linkedin.com/posts/dr-rahul-gaikwad_top-icons-of-india-activity-7409431388027990016-Omka?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlbbqwBURy054KT61oIoiRTs9E8dRHE3zE">Top Icons of India</a></h3>
+                <p>Honoured to be featured as 𝗧𝗼𝗽 𝗜𝗰𝗼𝗻𝘀 𝗼𝗳 𝗜𝗻𝗱𝗶𝗮🇮🇳!</p>
+                <p>This recognition represents more than an individual milestone, it reflects a journey of continuous learning, building systems at scale, driving real-world impact, and consistently giving back to the technology community.</p>
+                <span>Issued by BTALKZ | 2026</span>
+            </div>
+        </div>
+        <div class="awards-card">
             <div class="awards-thumbnail"><img src="assets/man of excellence.jpg" alt="Man of Excellence" onclick="openImageModal('assets/man of excellence.jpg')"></div>
             <div class="awards-content">
                 <h3><a href="https://www.aibcf.com/dr-rahul-gaikwad/">Man of Excellence</a></h3>
                 <p>Honoured by AIBCF for distinguished contributions in technology, research, and community leadership. Recognized as a trailblazer across domains including cloud computing, AI/ML, and DevOps — combining over 15 years of industry expertise with academic contributions and mentorship.</p>
-                <span>Issued by AIBCF  | 2025</span>
+                <span>Issued by AIBCF | 2025</span>
             </div>
         </div>
         <div class="awards-card">
@@ -2013,8 +2033,38 @@
 
 <section id="publications">
     <h2>Publications</h2>
-    
-    <div class="publications-subsection">
+
+    <div class="publications-subsection medium-blogs-section">
+        <h3>Medium Blogs</h3>
+        <div class="pub-container">
+            <div class="pub-card">
+                <h4><a href="https://medium.com/@dr-rahul-gaikwad/from-alert-to-auto-remediation-autonomous-incident-response-on-aws-with-hcp-terraform-and-vault-a4543b23326b">From Alert to Auto-Remediation: Autonomous Incident Response on AWS with HCP Terraform and Vault</a></h4>
+                <span>Medium  • APR 2026</span>
+            </div>
+            <div class="pub-card">
+                <h4><a href="https://medium.com/@dr-rahul-gaikwad/my-aws-certification-journey-from-failure-to-golden-jacket-cfda23f30501">My AWS Certification Journey: From Failure to Golden Jacket</a></h4>
+                <span>Medium • MAR 2026</span>
+            </div>
+            <div class="pub-card">
+                <h4><a href="https://medium.com/@dr-rahul-gaikwad/how-i-built-my-mini-terraform-advisor-ai-agent-72af374518c3">How I built my Mini Terraform Advisor AI Agent?</a></h4>
+                <span>Medium • FEB 2026</span>
+            </div>
+            <div class="pub-card">
+                <h4><a href="https://medium.com/@dr-rahul-gaikwad/zero-context-switching-manage-infrastructure-right-inside-your-ide-63e1eff1f2d6">Zero Context Switching: Manage AWS Infrastructure Right Inside Your IDE</a></h4>
+                <span>Medium • DEC 2025</span>
+            </div>
+            <div class="pub-card">
+                <h4><a href="https://medium.com/@dr-rahul-gaikwad/smart-infra-discovery-with-terraform-search-and-kiro-agent-hooks-b002dcf6f833">Smart AWS Infra Discovery with Terraform Search and Kiro Agent Hooks</a></h4>
+                <span>Medium • NOV 2025</span>
+            </div>
+            <div class="pub-card">
+                <h4><a href="https://medium.com/@dr-rahul-gaikwad/ai-in-education-empowering-teachers-and-students-for-the-future-6ca9901f2204">AI in Education: Empowering Teachers and Students for the Future</a></h4>
+                <span>Medium • NOV 2025</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="publications-subsection aws-blogs-section">
         <h3>AWS Blogs</h3>
         <div class="pub-container">
             <div class="pub-card">
@@ -2052,7 +2102,7 @@
         </div>
     </div>
     
-    <div class="publications-subsection">
+    <div class="publications-subsection prescriptive-section">
         <h3>AWS Prescriptive Guidance</h3>
         <div class="pub-container">
             <div class="pub-card">
@@ -2170,17 +2220,17 @@ Keep potential attackers at bay with a clean Active Directory.</span>
             <div class="pub-card">
                 <h4><a href="https://builder.aws.com/content/2wzg7BVFA9zYdcZi7Lx9e4P3ymT/managing-amazon-q-cli-access-via-q-developer-pro">Managing Amazon Q CLI Access via Q Developer Pro</a></h4>
                 <span>Securely enable and restrict Amazon Q CLI access for select users using Amazon Q Developer Pro. Set fine-grained controls to ensure only authorized use.</span>
-                <span><pre>MAY 2025</pre></span>
+                <span>AWS Community • MAY 2025</span>
             </div>
             <div class="pub-card">
                 <h4><a href="https://builder.aws.com/content/2rq3I8AotcBTK0li3iaL4H8OClA/q-bits-provisioning-rds-with-terraform-and-q-developer">Q-Bits: Provisioning RDS with Terraform and Q Developer</a></h4>
                 <span>This blog post explores how Amazon Q Developer enhances Terraform workflows by providing real-time explanations, suggesting best practices, and generating code.</span>
-                <span><pre>JAN 2025</pre></span>
+                <span>AWS Community • JAN 2025</span>
             </div>
             <div class="pub-card">
                 <h4><a href="https://builder.aws.com/content/2rwleIeqtenCBXeQRLplR1RqG0M/cross-region-replication-for-elasticache-redis-in-hyderabad-using-riot">Cross-Region Replication for ElastiCache Redis in Hyderabad Using RIOT</a></h4>
                 <span>Setting up cross-region replication for Amazon ElastiCache Redis using RIOT, focusing on Hyderabad.</span>
-                <span><pre>FEB 2022</pre></span>
+                <span>AWS Community • FEB 2022</span>
             </div>
         </div>
     </div>
@@ -2190,6 +2240,26 @@ Keep potential attackers at bay with a clean Active Directory.</span>
     <h2>Code Samples</h2>
     
     <div class="code-table">
+        <div class="code-row">
+            <div class="code-title">Autonomous Incident Response: AWS DevOps Agent with HCP Terraform and Vault</div>
+            <div class="code-link"><a href="https://github.com/dr-rahulgaikwad/ai-devops-agent-terraform-vault-mcp" target="_blank">Check on GitHub ↗</a></div>
+        </div>
+        <div class="code-row">
+            <div class="code-title">From IaC to InfraOps: Automating Day-2 Operations with Terraform Actions and AAP</div>
+            <div class="code-link"><a href="https://github.com/dr-rahulgaikwad/tf-actions-aap-gcp" target="_blank">Check on GitHub ↗</a></div>
+        </div>
+        <div class="code-row">
+            <div class="code-title">Terraform Run Task AI Analyzer Demo</div>
+            <div class="code-link"><a href="https://github.com/dr-rahulgaikwad/terraform-runtask-demo" target="_blank">Check on GitHub ↗</a></div>
+        </div>
+        <div class="code-row">
+            <div class="code-title">Terraform Run Task: AI-Powered Plan Analyzer</div>
+            <div class="code-link"><a href="https://github.com/dr-rahulgaikwad/terraform-runtask-aws-ai-tf-plan-analyzer" target="_blank">Check on GitHub ↗</a></div>
+        </div>
+        <div class="code-row">
+            <div class="code-title">Terraform Automation with Kiro Agent Hooks & MCP Server</div>
+            <div class="code-link"><a href="https://github.com/dr-rahulgaikwad/terraform-action-kiro-agent-hooks" target="_blank">Check on GitHub ↗</a></div>
+        </div>
         <div class="code-row">
             <div class="code-title">Amazon DevOps Guru CDK Samples</div>
             <div class="code-link"><a href="https://github.com/aws-samples/amazon-devopsguru-cdk-samples" target="_blank">Check on GitHub ↗</a></div>
@@ -2310,6 +2380,26 @@ Keep potential attackers at bay with a clean Active Directory.</span>
 <section id="videos">
     <h2>Featured Media & Sessions</h2>
     <div class="video-container">
+
+        <div class="video-card">
+            <img src="https://img.youtube.com/vi/i48u64oGoWE/hqdefault.jpg" 
+                 alt="HashiCorp, an IBM Company" 
+                 onclick="openModal('i48u64oGoWE')">
+            <h3 onclick="openModal('i48u64oGoWE')">From Terraform plans to insights: AI-powered Terraform analysis with Bedrock</h3>
+            <div class="bottom-section">
+                <a class="watch-btn" href="https://youtu.be/i48u64oGoWE" target="_blank">Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <img src="https://img.youtube.com/vi/_AUUM2GAk9g/hqdefault.jpg" 
+                 alt="DevConf" 
+                 onclick="openModal('_AUUM2GAk9g')">
+            <h3 onclick="openModal('_AUUM2GAk9g')">From IaC to InfraOps: Automating Day-2 Operations with Terraform Actions & Ansible - DevConf.IN 2026</h3>
+            <div class="bottom-section">
+                <a class="watch-btn" href="https://youtu.be/_AUUM2GAk9g" target="_blank">Watch on YouTube</a>
+            </div>
+        </div>
 
         <!-- Video 1 -->
         <div class="video-card">
@@ -2795,54 +2885,31 @@ Keep potential attackers at bay with a clean Active Directory.</span>
         navLinks.classList.toggle('active');
     }
 
-    // Handle AWS Prescriptive Guidance and GitHub span elements
+    // Handle AWS Prescriptive Guidance Read More
     document.addEventListener('DOMContentLoaded', function() {
-        const prescriptiveCards = document.querySelectorAll('#publications .publications-subsection:nth-child(3) .pub-card');
-        const githubCards = document.querySelectorAll('#publications .publications-subsection:nth-child(5) .pub-card');
-        const codeSamplesCards = document.querySelectorAll('#codesamples .publications-subsection .pub-card');
-        
-        function addReadMoreFunctionality(cards) {
-            cards.forEach(function(card) {
-                const span = card.querySelector('span');
-                if (span && span.textContent.trim().length > 0) {
-                    const lineHeight = 1.4;
-                    const maxLines = 3;
-                    const tempDiv = document.createElement('div');
-                    tempDiv.style.position = 'absolute';
-                    tempDiv.style.visibility = 'hidden';
-                    tempDiv.style.width = span.offsetWidth + 'px';
-                    tempDiv.style.fontSize = '0.85rem';
-                    tempDiv.style.lineHeight = lineHeight;
-                    tempDiv.textContent = span.textContent;
-                    document.body.appendChild(tempDiv);
-                    
-                    const actualLines = Math.ceil(tempDiv.offsetHeight / (parseFloat(getComputedStyle(tempDiv).fontSize) * lineHeight));
-                    document.body.removeChild(tempDiv);
-                    
-                    if (actualLines >= maxLines) {
-                        span.classList.add('summary-text');
-                        const readMoreBtn = document.createElement('button');
-                        readMoreBtn.className = 'read-more-btn';
-                        readMoreBtn.textContent = 'Read More';
-                        readMoreBtn.onclick = function() {
-                            const isExpanded = span.classList.contains('expanded');
-                            if (isExpanded) {
-                                span.classList.remove('expanded');
-                                this.textContent = 'Read More';
-                            } else {
-                                span.classList.add('expanded');
-                                this.textContent = 'Read Less';
-                            }
-                        };
-                        card.appendChild(readMoreBtn);
-                    }
-                }
-            });
-        }
-        
-        addReadMoreFunctionality(prescriptiveCards);
-        addReadMoreFunctionality(githubCards);
-        addReadMoreFunctionality(codeSamplesCards);
+        const subsections = document.querySelectorAll('#publications .publications-subsection');
+        let prescriptiveSection = null;
+        subsections.forEach(function(s) {
+            if (s.querySelector('h3') && s.querySelector('h3').textContent.trim() === 'AWS Prescriptive Guidance') {
+                prescriptiveSection = s;
+            }
+        });
+        if (!prescriptiveSection) return;
+
+        prescriptiveSection.querySelectorAll('.pub-card').forEach(function(card) {
+            const span = card.querySelector('span');
+            if (span && span.textContent.trim().length > 100) {
+                span.classList.add('summary-text');
+                const btn = document.createElement('button');
+                btn.className = 'read-more-btn';
+                btn.textContent = 'Read More';
+                btn.onclick = function() {
+                    const expanded = span.classList.toggle('expanded');
+                    this.textContent = expanded ? 'Read Less' : 'Read More';
+                };
+                card.appendChild(btn);
+            }
+        });
     });
 
     // Welcome Screen functionality
