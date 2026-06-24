@@ -879,7 +879,8 @@
 }
 /* AWS Blogs & Medium Blogs Cards - shared compact style */
 .aws-blogs-section .pub-card,
-.medium-blogs-section .pub-card {
+.medium-blogs-section .pub-card,
+.HashiCorp-blogs-section .pub-card {
     background: #f8f9fa;
     border: 1px solid #e9ecef;
     border-radius: 8px;
@@ -891,29 +892,34 @@
     height: fit-content;
 }
 .aws-blogs-section .pub-card:hover,
-.medium-blogs-section .pub-card:hover {
+.medium-blogs-section .pub-card:hover,
+.HashiCorp-blogs-section .pub-card:hover {
     background: #fff;
     border-color: #6C63FF;
     transform: translateY(-1px);
 }
 .aws-blogs-section .pub-card h4,
-.medium-blogs-section .pub-card h4 {
+.medium-blogs-section .pub-card h4,
+.HashiCorp-blogs-section .pub-card h4 {
     margin: 0 0 6px;
     font-size: 0.95rem;
     color: #333;
     line-height: 1.3;
 }
 .aws-blogs-section .pub-card h4 a,
-.medium-blogs-section .pub-card h4 a {
+.medium-blogs-section .pub-card h4 a,
+.HashiCorp-blogs-section .pub-card h4 a {
     color: #333;
     text-decoration: none;
 }
 .aws-blogs-section .pub-card h4 a:hover,
-.medium-blogs-section .pub-card h4 a:hover {
+.medium-blogs-section .pub-card h4 a:hover,
+.HashiCorp-blogs-section .pub-card h4 a:hover {
     color: #6C63FF;
 }
 .aws-blogs-section .pub-card span,
-.medium-blogs-section .pub-card span {
+.medium-blogs-section .pub-card span,
+.HashiCorp-blogs-section .pub-card span {
     font-size: 0.8rem;
     color: #666;
     line-height: 1.2;
@@ -1335,6 +1341,220 @@
     }
 }
 
+
+/* ====== Appointment Section ====== */
+#appointment {
+    padding: 60px 5%;
+}
+#appointment h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+.appointment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Virtual Business Card */
+.vcard {
+    background: linear-gradient(135deg, #6C63FF 0%, #4a42cc 100%);
+    border-radius: 18px;
+    padding: 32px 28px;
+    color: #fff;
+    box-shadow: 0 8px 30px rgba(108, 99, 255, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+.vcard::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 160px;
+    height: 160px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+}
+.vcard::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -30px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+}
+.vcard-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+.vcard-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.5);
+    flex-shrink: 0;
+}
+.vcard-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 0 4px;
+}
+.vcard-title {
+    font-size: 0.85rem;
+    opacity: 0.88;
+    line-height: 1.4;
+    margin: 0;
+}
+.vcard-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin: 18px 0;
+}
+.vcard-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+.vcard-info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.92;
+}
+.vcard-info-row span.icon {
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+.vcard-info-row a {
+    color: #fff;
+    text-decoration: none;
+}
+.vcard-info-row a:hover {
+    text-decoration: underline;
+}
+.vcard-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+.vcard-social a img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+.vcard-social a img:hover {
+    opacity: 1;
+}
+.vcard-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+    position: relative;
+    z-index: 1;
+}
+.vcard-badge {
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Book Appointment Card */
+.book-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 2px solid #6C63FF;
+}
+.book-card h3 {
+    color: #6C63FF;
+    font-size: 1.4rem;
+    margin: 0 0 8px;
+}
+.book-card .book-subtitle {
+    color: #888;
+    font-size: 0.9rem;
+    margin: 0 0 24px;
+}
+.book-options {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+.book-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease;
+}
+.book-option:hover {
+    border-color: #6C63FF;
+    background: #f5f4ff;
+    transform: translateY(-1px);
+}
+.book-option .opt-icon {
+    font-size: 1.6rem;
+    width: 40px;
+    text-align: center;
+    flex-shrink: 0;
+}
+.book-option .opt-text strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 2px;
+}
+.book-option .opt-text span {
+    font-size: 0.82rem;
+    color: #888;
+}
+.book-cta {
+    display: block;
+    text-align: center;
+    padding: 13px;
+    background: #6C63FF;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.3s;
+}
+.book-cta:hover {
+    background: #5a54d6;
+}
+
+@media (max-width: 480px) {
+    .appointment-grid {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
 
@@ -1357,6 +1577,7 @@
         <a href="#codesamples">Code Samples</a>
         <a href="#education">Education</a>
         <a href="#videos">Media</a>
+        <a href="#appointment">Appointment</a>
     </div>
 </nav>
 
@@ -1388,9 +1609,18 @@
     
     <div class="profile-card">
         <h2>About Me</h2>
-        <p>I'm a transformational technology leader with <strong>15+</strong> years of experience driving innovation across Cloud, DevOps, AI/ML, and Generative AI. Holding a PhD in Artificial Intelligence for IT Operations (AIOps) from Savitribai Phule Pune University, along with MBA, MCA and <strong>35+</strong> technical certifications (including <strong>12×</strong> AWS, <strong>3×</strong> HashiCorp, Confluent Kafka, and Stanford ML), I blend deep technical expertise with strategic vision and business acumen.</p>
-        <p>Currently serving as a Staff Resident Solutions Architect at IBM, I partner with enterprise CxOs and leadership teams across APAC to define and accelerate their cloud transformation journey using the HashiCorp product suite. My work focuses on enabling the Cloud Operating Model, helping organizations adopt and operationalize multi-cloud frameworks, and driving measurable business outcomes. I collaborate with global teams to provide strategic and technical guidance across automation, observability, and system administration, while supporting modernization and developer velocity initiatives.</p>
-        <p>As a recognized thought leader, I delivered <strong>30+</strong> speaking sessions at events like AWS re:Invent, HashiConf, and IIT Bombay, and authored <strong>8</strong> AWS blogs, <strong>10</strong> prescriptive guidance, and <strong>15+</strong> code samples. My research includes <strong>8</strong> published papers and patents in IT system alert classification and event log mining.</p>
+        <p>As a Staff Resident Solutions Architect at HashiCorp (an IBM company), I help enterprises across APAC bridge the gap by aligning executive vision, platform engineering, and cloud strategy to deliver measurable business outcomes.</p>
+
+        <p>My expertise spans Platform Engineering, Cloud Transformation, AI/Agentic AI, Infrastructure Automation, and AIOps. I partner with CxOs, platform leaders, and enterprise architects to build Internal Developer Platforms, modernize cloud operating models, accelerate AI adoption, and simplify operations through automation and observability.</p>
+
+        <p><strong>Key outcomes delivered:</strong></p>
+        <p style="margin: 4px 0;">&#8594; 40% reduction in cloud operational costs</p>
+        <p style="margin: 4px 0;">&#8594; 70% faster infrastructure provisioning and delivery</p>
+        <p style="margin: 4px 0;">&#8594; 80% improvement in platform resilience and operational readiness</p>
+        <p style="margin: 4px 0;">&#8594; Faster adoption of Platform Engineering, Infrastructure as Code, and AI-driven operations</p>
+        <p style="margin: 4px 0;">&#8594; Improved developer productivity through AI-powered delivery workflows</p>
+
+        <p style="margin-top: 16px;">Whether you're leading a cloud or AI transformation, building modern platforms, or starting your journey in technology, I'm always open to connecting, sharing insights, and helping organizations scale with confidence.</p>
     </div>
 </section>
 
@@ -1526,7 +1756,16 @@
         <h4>Speaker at</h4>
         <p>AWS re:Invent, HashiConf, HashiTalks, IIT Bombay, CDK Day, AWS Community Day, Student Community Day, AWS TFC Summit Week (TSW), SyllaDB Summit, Cloud Native Day, and various technology conferences worldwide. Delivered impactful sessions and hands-on workshops on Cloud Computing, Infrastructure as Code, DevOps, AI/ML, and Emerging Technologies, engaging diverse audiences across student and professional communities.</p>
     </div>
-    
+
+
+    <div class="work-card">
+            <h3>Cloud Native Day Pune</h3>
+            <div class="role">
+                <h4>Panel Member</h4>
+                <span>May 2026</span>
+            </div>
+        </div>
+
     <div class="work-container">
         <div class="work-card">
             <h3>Amazon</h3>
@@ -1594,6 +1833,10 @@
 
         <div class="work-card">
             <h3>Sanjivani College of Engineering kopargaon</h3>
+            <div class="role">
+                <h4>Board of Studies</h4>
+                <span>May 2026 - Present</span>
+            </div>
             <div class="role">
                 <h4>Adjunct Professor</h4>
                 <span>Sep 2023 - Present</span>
@@ -1830,6 +2073,42 @@
     <h2>Awards & Achievements</h2>
     <div class="awards-container">
         <div class="awards-card">
+            <div class="awards-thumbnail"><img src="assets\Ambassador_GJ.png" alt="AWS Ambassador" onclick="openImageModal('assets\ambassador.png')"></div>
+            <div class="awards-content">
+                <h3><a href="https://www.linkedin.com/posts/dr-rahul-gaikwad_awsambassador-aws-agenticai-activity-7473574032114905089-qjGH?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlbbqwBURy054KT61oIoiRTs9E8dRHE3zE">AWS Ambassador Golden Jacket</a></h3>
+                <p>Recognized with 𝗔𝗪𝗦 𝗔𝗺𝗯𝗮𝘀𝘀𝗮𝗱𝗼𝗿 𝗚𝗼𝗹𝗱𝗲𝗻 𝗝𝗮𝗰𝗸𝗲𝘁, and honored to be the first from HashiCorp to be part of this program. </p>
+                <p>This marks the 𝟮𝗻𝗱 𝗚𝗼𝗹𝗱𝗲𝗻 𝗝𝗮𝗰𝗸𝗲𝘁 - a symbol of continuous growth, lifelong learning, and dedication to the global community.</p>
+                <span>Issued by AWS | 2026</span>
+            </div>
+        </div>
+        <div class="awards-card">
+            <div class="awards-thumbnail"><img src="assets\AgenticAI_L300.jpeg" alt="AWS Ambassador" onclick="openImageModal('assets\ambassador.png')"></div>
+            <div class="awards-content">
+                <h3><a href="https://www.linkedin.com/posts/dr-rahul-gaikwad_ai-agent-aws-activity-7472479323245928448-p8pq?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlbbqwBURy054KT61oIoiRTs9E8dRHE3zE">Agentic AI L300 Expert</a></h3>
+                <p>Featured as an 𝗔𝗴𝗲𝗻𝘁𝗶𝗰 𝗔𝗜 𝗟𝟯𝟬𝟬 𝗘𝘅𝗽𝗲𝗿𝘁 in the AWS Ambassador Summit.</p>
+                <p>Recognized among just 52 Amazon Web Services (AWS) Ambassadors globally who achieved the Agentic AI Domain Specialization.</p>
+                <span>Issued by AWS | 2026</span>
+            </div>
+        </div>
+        <div class="awards-card">
+            <div class="awards-thumbnail"><img src="assets\Best_Presenter.png" alt="Best Presenter" onclick="openImageModal('assets\Best_Presenter.png')"></div>
+            <div class="awards-content">
+                <h3><a href="https://www.linkedin.com/posts/dr-rahul-gaikwad_ai-agent-aws-activity-7472479323245928448-p8pq?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlbbqwBURy054KT61oIoiRTs9E8dRHE3zE">Best Presenter Award</a></h3>
+                <p>Honored to receive 𝗕𝗲𝘀𝘁 𝗣𝗿𝗲𝘀𝗲𝗻𝘁𝗲𝗿 Award for my Talk at AWS Ambassador Summit, Seattle.</p>
+                <p>Privilege to present "When Infrastructure Fixes Itself! – Self-Healing AWS Infrastructure with AIOps Agents and Terraform".</p>
+                <span>Issued by AWS | 2026</span>
+            </div>
+        </div>
+        <div class="awards-card">
+            <div class="awards-thumbnail"><img src="assets\golden_j.png" alt="Golden Jacket India" onclick="openImageModal('assets\golden_j.png')"></div>
+            <div class="awards-content">
+                <h3><a href="https://www.linkedin.com/posts/dr-rahul-gaikwad_ai-agent-aws-activity-7472479323245928448-p8pq?utm_source=share&utm_medium=member_desktop&rcm=ACoAADlbbqwBURy054KT61oIoiRTs9E8dRHE3zE">Golden Jacket India</a></h3>
+                <p>Featured by Golden Jacket India Community.</p>
+                <p>The Golden Jackets India community celebrates cloud leaders who are passionate about learning and committed to helping others succeed.</p>
+                <span>Issued by Golden Jacket India | 2026</span>
+            </div>
+        </div>
+        <div class="awards-card">
             <div class="awards-thumbnail"><img src="assets\ambassador.png" alt="AWS Ambassador" onclick="openImageModal('assets\ambassador.png')"></div>
             <div class="awards-content">
                 <h3><a href="https://aws.amazon.com/partners/ambassadors/?ams%23interactive-card-vertical%23pattern-data-1736951101.search=dr.%20rahul">AWS Ambassador</a></h3>
@@ -2033,7 +2312,15 @@
 
 <section id="publications">
     <h2>Publications</h2>
-
+    <div class="publications-subsection HashiCorp-blogs-section">
+        <h3>HashiCorp Blogs</h3>
+        <div class="pub-container">
+            <div class="pub-card">
+                <h4><a href="https://hashicorpengineering.substack.com/p/from-iac-to-infraops-automate-vm">From IaC to InfraOps: Automate VM patching with HCP Terraform, Vault, and Ansible</a></h4>
+                <span>HashiCorp  • APR 2026</span>
+            </div>
+        </div>
+    </div>
     <div class="publications-subsection medium-blogs-section">
         <h3>Medium Blogs</h3>
         <div class="pub-container">
@@ -2629,6 +2916,73 @@ Keep potential attackers at bay with a clean Active Directory.</span>
 </div>
 
 
+
+<section id="appointment">
+    <h2>Appointment</h2>
+    <div class="appointment-grid">
+
+        <!-- Virtual Business Card -->
+        <div class="vcard">
+            <div class="vcard-header">
+                <img class="vcard-avatar" src="assets/Headshot1.jpeg" alt="Dr. Rahul Gaikwad">
+                <div>
+                    <p class="vcard-name">Dr. Rahul Gaikwad</p>
+                    <p class="vcard-title">Staff Resident Solutions Architect<br>HashiCorp (an IBM Company) · APAC</p>
+                </div>
+            </div>
+            <hr class="vcard-divider">
+            <div class="vcard-info">
+                <div class="vcard-info-row">
+                    <span class="icon">📍</span>
+                    <span>Pune, Maharashtra, India</span>
+                </div>
+                <div class="vcard-info-row">
+                    <span class="icon">✉️</span>
+                    <a href="mailto:rahulgaikwad1986@gmail.com">rahulgaikwad1986@gmail.com</a>
+                </div>
+                <div class="vcard-info-row">
+                    <span class="icon">🌐</span>
+                    <a href="https://dr-rahulgaikwad.com" target="_blank">dr-rahulgaikwad.com</a>
+                </div>
+                <div class="vcard-info-row">
+                    <span class="icon">💼</span>
+                    <a href="https://www.linkedin.com/in/dr-rahul-gaikwad/" target="_blank">linkedin.com/in/dr-rahul-gaikwad</a>
+                </div>
+            </div>
+            <div class="vcard-badges">
+                <span class="vcard-badge">Platform Engineering</span>
+                <span class="vcard-badge">Cloud Transformation</span>
+                <span class="vcard-badge">AI / AIOps</span>
+                <span class="vcard-badge">IaC</span>
+                <span class="vcard-badge">HashiCorp Ambassador</span>
+                <span class="vcard-badge">AWS Ambassador</span>
+            </div>
+        </div>
+
+        <!-- Book Appointment -->
+        <div class="book-card">
+            <h3>📅 Book an Appointment</h3>
+            <p class="book-subtitle">Pick a time that works for you — powered by Google Calendar.</p>
+            <div class="book-options">
+                <a class="book-option" href="https://topmate.io/bhoomi_ganesh/2167171" target="_blank">
+                    <span class="opt-icon">💬</span>
+                    <div class="opt-text">
+                        <strong>Casual Call <span style="background:#e8f5e9;color:#2e7d32;font-size:0.72rem;padding:2px 8px;border-radius:10px;font-weight:600;margin-left:6px;">FREE</span></strong>
+                        <span>15 min · Open chat — ask anything, no agenda needed</span>
+                    </div>
+                </a>
+                <a class="book-option" href="https://topmate.io/bhoomi_ganesh/2167173" target="_blank">
+                    <span class="opt-icon">🎯</span>
+                    <div class="opt-text">
+                        <strong>1:1 Mentoring <span style="background:#fff3e0;color:#e65100;font-size:0.72rem;padding:2px 8px;border-radius:10px;font-weight:600;margin-left:6px;">PAID</span></strong>
+                        <span>30 min · Focused session on career, cloud, or tech strategy</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 <footer>
     <p>&copy; 2025 · Dr. Rahul Gaikwad</p>
