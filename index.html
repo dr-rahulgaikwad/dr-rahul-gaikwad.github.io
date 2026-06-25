@@ -14,12 +14,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dr. Rahul Gaikwad | Technology Evangelist</title>
 <!-- Favicon -->
-<link rel="icon" href="/assets/favicon_io/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="/assets/favicon_io/favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/apple-touch-icon.png">
-<link rel="manifest" href="/assets/favicon_io/site.webmanifest">
+<link rel="icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="assets/favicon_io/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+<link rel="manifest" href="assets/favicon_io/site.webmanifest">
     
 <!-- ✅ Social Media Thumbnail / Open Graph -->
 <meta property="og:title" content="Dr. Rahul Gaikwad" />
@@ -75,6 +75,12 @@
     }
     nav a:hover {
         color: #6C63FF;
+    }
+    nav a.active {
+        color: #6C63FF;
+        font-weight: 600;
+        border-bottom: 2px solid #6C63FF;
+        padding-bottom: 2px;
     }
     nav .logo {
         font-weight: 600;
@@ -1577,7 +1583,6 @@
         <a href="#codesamples">Code Samples</a>
         <a href="#education">Education</a>
         <a href="#videos">Media</a>
-        <a href="#appointment">Appointment</a>
     </div>
 </nav>
 
@@ -1609,7 +1614,7 @@
     
     <div class="profile-card">
         <h2>About Me</h2>
-        <p>As a Staff Resident Solutions Architect at HashiCorp (an IBM company), I help enterprises across APAC bridge the gap by aligning executive vision, platform engineering, and cloud strategy to deliver measurable business outcomes.</p>
+        <p>As a Staff Solutions Architect (Field CTO) at HashiCorp / IBM, I help enterprises across APJ bridge the gap by aligning executive vision, platform engineering, and cloud strategy to deliver measurable business outcomes.</p>
 
         <p>My expertise spans Platform Engineering, Cloud Transformation, AI/Agentic AI, Infrastructure Automation, and AIOps. I partner with CxOs, platform leaders, and enterprise architects to build Internal Developer Platforms, modernize cloud operating models, accelerate AI adoption, and simplify operations through automation and observability.</p>
 
@@ -1758,15 +1763,16 @@
     </div>
 
 
-    <div class="work-card">
+    
+
+    <div class="work-container">
+        <div class="work-card">
             <h3>Cloud Native Day Pune</h3>
             <div class="role">
                 <h4>Panel Member</h4>
                 <span>May 2026</span>
             </div>
         </div>
-
-    <div class="work-container">
         <div class="work-card">
             <h3>Amazon</h3>
             <div class="role">
@@ -2250,17 +2256,17 @@
         <h3>Patents</h3>
         <div class="pp-container">
             <div class="pp-card">
-                <h4><a href= "https://ipindia.gov.in/writereaddata/Portal/IPOJournal/1_4899_1/Part-1.pdf">WRITER IDENTIFICATION USING NEURAL NETWORKS</a></h4>
+                <h4>WRITER IDENTIFICATION USING NEURAL NETWORKS</h4>
                 <p>Computer Vision has been evolving everyday with advancement in the Deep Learning. Residual Neural Networks is one of such image classification techniques. This paper is an application of ResNet 50 for the purpose of writer identification using handwriting biometric – signature. Different signature verification competitions had used many approaches. Here SigComp2009 dataset is used and experimental results are discussed. ResNet 50 is able to achieved 92% accuracy for 780 signatures used randomly from ICDAR 2009 dataset of genuine signatures.</p>
                 <span>IN 202021033854 · Filed Aug 7, 2020</span>
             </div>
             <div class="pp-card">
-                <h4><a href= "https://ipindia.gov.in/writereaddata/Portal/IPOJournal/1_4901_1/Part-1.pdf">IT SYSTEM ALERT CLASSIFICATION AND PREDICTION OF STANDARD OPERATING PROCEDURES (SOP) USING MACHINE LEARNING ALGORITHMS</a></h4>
+                <h4>IT SYSTEM ALERT CLASSIFICATION AND PREDICTION OF STANDARD OPERATING PROCEDURES (SOP) USING MACHINE LEARNING ALGORITHMS</h4>
                 <p>System alerts in IT operations are often unpredictable since they vary across projects, components, environments, and alert types, making their Standard Operating Procedures (SOPs) difficult to determine. This research explores the use of efficient data mining techniques to predict the appropriate SOPs for alerts, enabling quicker resolution of issues, minimizing manual efforts, and reducing downtime. By mapping alerts to recommended solutions in a systematic way, the approach not only improves reliability and availability of IT services but also ensures smoother business operations for end users.</p>
                 <span>IN 202021033083 · Filed Aug 1, 2020</span>
             </div>
             <div class="pp-card">
-                <h4><a href= "https://ipindia.gov.in/writereaddata/Portal/IPOJournal/1_4901_1/Part-1.pdf">ASSOCIATION RULE MINING IN SYSTEM EVENT LOGS TO DISCOVER PATTERNS</a></h4>
+                <h4>ASSOCIATION RULE MINING IN SYSTEM EVENT LOGS TO DISCOVER PATTERNS</h4>
                 <p>This research focuses on log analysis in IT systems, highlighting the challenges of handling large, complex, and unstructured logs that make manual inspection impractical. It emphasizes parsing logs into structured data, correlating diverse information, and uncovering patterns as key aspects of AIOps. The study evaluates over a hundred log events across distributed systems and services, presenting association rules that provide valuable insights for understanding, troubleshooting, and resolving system issues.</p>
                 <span>IN 202021033084 · Filed Aug 1, 2020</span>
             </div>
@@ -2324,6 +2330,10 @@
     <div class="publications-subsection medium-blogs-section">
         <h3>Medium Blogs</h3>
         <div class="pub-container">
+            <div class="pub-card">
+                <h4><a href="https://medium.com/@dr-rahul-gaikwad/cognito-is-regional-your-users-are-not-7d110bafc62a">Cognito is regional, users are not!</a></h4>
+                <span>Medium  • MAY 2026</span>
+            </div>
             <div class="pub-card">
                 <h4><a href="https://medium.com/@dr-rahul-gaikwad/from-alert-to-auto-remediation-autonomous-incident-response-on-aws-with-hcp-terraform-and-vault-a4543b23326b">From Alert to Auto-Remediation: Autonomous Incident Response on AWS with HCP Terraform and Vault</a></h4>
                 <span>Medium  • APR 2026</span>
@@ -2527,6 +2537,15 @@ Keep potential attackers at bay with a clean Active Directory.</span>
     <h2>Code Samples</h2>
     
     <div class="code-table">
+       
+        <div class="code-row">
+            <div class="code-title">AIOps Self-Healing Infrastructure</div>
+            <div class="code-link"><a href="https://github.com/dr-rahulgaikwad/aiops-self-healing-iac-agents" target="_blank">Check on GitHub ↗</a></div>
+        </div>
+        <div class="code-row">
+            <div class="code-title">Amazon Cognito Cross-Region Disaster Recovery</div>
+            <div class="code-link"><a href="https://github.com/dr-rahulgaikwad/amazon-cognito-dr" target="_blank">Check on GitHub ↗</a></div>
+        </div>
         <div class="code-row">
             <div class="code-title">Autonomous Incident Response: AWS DevOps Agent with HCP Terraform and Vault</div>
             <div class="code-link"><a href="https://github.com/dr-rahulgaikwad/ai-devops-agent-terraform-vault-mcp" target="_blank">Check on GitHub ↗</a></div>
@@ -2917,7 +2936,7 @@ Keep potential attackers at bay with a clean Active Directory.</span>
 
 
 
-<section id="appointment">
+<section id="appointment" style="display:none;">
     <h2>Appointment</h2>
     <div class="appointment-grid">
 
@@ -3137,9 +3156,16 @@ Keep potential attackers at bay with a clean Active Directory.</span>
         if (savedSection && document.getElementById(savedSection)) {
             document.getElementById(savedSection).style.display = 'block';
             if (coverImage) coverImage.style.display = 'none';
+            // Set active nav link on load
+            navLinks.forEach(l => {
+                if (l.getAttribute('href') === '#' + savedSection) l.classList.add('active');
+            });
         } else {
             if (heroSection) heroSection.style.display = 'flex';
             if (coverImage) coverImage.style.display = 'block';
+            // Set About as active by default
+            const aboutLink = document.querySelector('nav a[href="#"]');
+            if (aboutLink) aboutLink.classList.add('active');
         }
         
         navLinks.forEach(link => {
@@ -3153,8 +3179,16 @@ Keep potential attackers at bay with a clean Active Directory.</span>
                     navLinksContainer.classList.remove('active');
                 }
                 
-                        // Save current section
+                // Save current section
                 localStorage.setItem('currentSection', targetId);
+                
+                // Update URL without page reload
+                const newUrl = targetId ? '#' + targetId : window.location.pathname;
+                history.pushState(null, '', newUrl);
+
+                // Update active nav link
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
                 
                 // Hide all sections and hero
                 sections.forEach(section => section.style.display = 'none');
@@ -3469,6 +3503,15 @@ Keep potential attackers at bay with a clean Active Directory.</span>
     })();
 </script>
 
+<script>
+    // Auto open all external links in new tab
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+        });
+    });
+</script>
 </body>
 </html>
 
