@@ -230,6 +230,91 @@
         font-weight: 700;
     }
 
+    /* Proven Impact Card - Vertical Scroll - Terraform-Inspired */
+    .impact-card {
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+        padding: clamp(1.2rem, 2.5vw, 1.8rem);
+        margin: 2rem 5% 0 5%;
+        border: 1px solid #e5e7eb;
+        border-left: 4px solid #6C63FF;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+    }
+    .impact-card h2 {
+        color: #6C63FF;
+        font-size: 1.4rem;
+        margin: 0 0 16px 0;
+        font-weight: 600;
+        position: relative;
+    }
+    .impact-scroller-vertical {
+        height: 50px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f9fafb;
+        border-radius: 6px;
+        padding: 8px 16px;
+        border: 1px solid #e5e7eb;
+    }
+    .impact-item-vertical {
+        color: #374151;
+        font-size: 1rem;
+        line-height: 1.4;
+        font-weight: 500;
+        position: absolute;
+        width: calc(100% - 32px);
+        text-align: center;
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    .impact-item-vertical.active {
+        animation: scrollUpSmooth 2s ease-in-out;
+    }
+    @keyframes scrollUpSmooth {
+        0% {
+            transform: translateY(60px);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        20%, 70% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        85% {
+            opacity: 1;
+            transform: translateY(-30px);
+        }
+        100% {
+            transform: translateY(-80px);
+            opacity: 0;
+        }
+    }
+    @media (max-width: 760px) {
+        .impact-card {
+            margin: 1.5rem 3% 0 3%;
+            padding: 1rem;
+        }
+        .impact-card h2 {
+            font-size: 1.2rem;
+        }
+        .impact-scroller-vertical {
+            height: 60px;
+            padding: 8px 12px;
+        }
+        .impact-item-vertical {
+            font-size: 0.9rem;
+            width: calc(100% - 24px);
+        }
+    }
+
     /* Awards & Achievements */
     .awards-container {
         display: grid;
@@ -1599,7 +1684,7 @@
 <section class="hero" id="home">
     <div class="hero-text">
         <h1>Dr. Rahul Gaikwad</h1>
-        <p>HashiCorp-IBM | Ex-AWS | Field CTO | PhD | MCA | eMBA | MA | 11xAWS | 3xHashiCorp | AI/ML | GenAI | Award Winner | Author | HashiCorp Ambassador | Speaker | Mentor | Trainer | Researcher | YouTuber | Adjunct Professor</p>
+        <p>Staff RSA, IBM | Field CTO | CTO Programme, IIT Delhi | Ex-AWS | Forward Deployed Engineer | AWS Ambassador | PhD in AIOps | AI, Cloud & Platform Engineering  | 40% Cost Savings | 70% Faster Delivery |</p>
         <div class="company">
             <img src="https://cdn.freebiesupply.com/logos/large/2x/hashicorp-logo-png-transparent.png" alt="hashicorp logo">
             <span>|</span>
@@ -1620,20 +1705,32 @@
     
     <div class="profile-card">
         <h2>About Me</h2>
-        <p>As a Staff Solutions Architect (Field CTO) at HashiCorp / IBM, I help enterprises across APJ bridge the gap by aligning executive vision, platform engineering, and cloud strategy to deliver measurable business outcomes.</p>
+        <p><strong>Most cloud transformations don't fail because of technology. They fail when strategy, operating models, and execution don't align.</strong></p>
 
-        <p>My expertise spans Platform Engineering, Cloud Transformation, AI/Agentic AI, Infrastructure Automation, and AIOps. I partner with CxOs, platform leaders, and enterprise architects to build Internal Developer Platforms, modernize cloud operating models, accelerate AI adoption, and simplify operations through automation and observability.</p>
+        <p>That's the gap I help enterprises close — aligning executive vision, platform operating models, and engineering execution to accelerate measurable business outcomes.</p>
 
-        <p><strong>Key outcomes delivered:</strong></p>
-        <p style="margin: 4px 0;">&#8594; 40% reduction in cloud operational costs</p>
-        <p style="margin: 4px 0;">&#8594; 70% faster infrastructure provisioning and delivery</p>
-        <p style="margin: 4px 0;">&#8594; 80% improvement in platform resilience and operational readiness</p>
-        <p style="margin: 4px 0;">&#8594; Faster adoption of Platform Engineering, Infrastructure as Code, and AI-driven operations</p>
-        <p style="margin: 4px 0;">&#8594; Improved developer productivity through AI-powered delivery workflows</p>
+        <p>As a Staff Solutions Architect (Field CTO) at HashiCorp / IBM, I partner with CxOs, platform engineering leaders, and enterprise architects across APJ to accelerate Cloud, AI, Platform Engineering, and Infrastructure Transformation initiatives.</p>
 
-        <p style="margin-top: 16px;">Whether you're leading a cloud or AI transformation, building modern platforms, or starting your journey in technology, I'm always open to connecting, sharing insights, and helping organizations scale with confidence.</p>
+        <p><strong>What I Help Organizations Achieve</strong></p>
+        <p style="margin: 4px 0;">&#8594; Build Internal Developer Platforms that improve developer experience and velocity</p>
+        <p style="margin: 4px 0;">&#8594; Modernize Cloud Operating Models for scale, governance, and security</p>
+        <p style="margin: 4px 0;">&#8594; Adopt Platform Engineering practices that balance innovation with control</p>
+        <p style="margin: 4px 0;">&#8594; Accelerate AI and Agentic AI adoption through secure, production-ready architectures</p>
+        <p style="margin: 4px 0;">&#8594; Reduce operational complexity through automation, observability, and AIOps</p>
     </div>
 </section>
+
+<!-- Proven Impact Card - Vertical Scroll -->
+<div class="impact-card">
+    <h2>𝗣𝗿𝗼𝘃𝗲𝗻 𝗜𝗺𝗽𝗮𝗰𝘁</h2>
+    <div class="impact-scroller-vertical">
+        <div class="impact-item-vertical">→ 40% reduction in cloud operational costs</div>
+        <div class="impact-item-vertical">→ 70% faster infrastructure provisioning and delivery</div>
+        <div class="impact-item-vertical">→ 80% improvement in platform resilience and operational readiness</div>
+        <div class="impact-item-vertical">→ Accelerated adoption of Platform Engineering, Infrastructure as Code, and AI-driven operations</div>
+        <div class="impact-item-vertical">→ Improved developer productivity through platform engineering & AI-powered delivery workflows</div>
+    </div>
+</div>
 
 <section id="work" class="work-section">
     <div class="timeline" id="workTimeline">
@@ -2337,6 +2434,10 @@
         <h3>Medium Blogs</h3>
         <div class="pub-container">
             <div class="pub-card">
+                <h4><a href="https://medium.com/@dr-rahul-gaikwad/deploying-multi-agent-openai-systems-across-aws-direct-api-or-amazon-bedrock-424c89842c86">Deploying Multi-Agent OpenAI Systems Across AWS: Direct API or Amazon Bedrock?</a></h4>
+                <span>Medium • AUG 2026</span>
+            </div>
+            <div class="pub-card">
                 <h4><a href="https://medium.com/@dr-rahul-gaikwad/cognito-is-regional-your-users-are-not-7d110bafc62a">Cognito is regional, users are not!</a></h4>
                 <span>Medium  • MAY 2026</span>
             </div>
@@ -2640,6 +2741,15 @@ Keep potential attackers at bay with a clean Active Directory.</span>
 <section id="education">
     <h2>Education</h2>
     <div class="education-container">
+        <div class="education-card">
+            <img src="https://upload.wikimedia.org/wikipedia/sa/6/66/IIT_Delhi_logo.png" alt="IIT Delhi Logo">
+            <div>
+                <h3>Chief Technology Officer</h3>
+                <p>speacialization-<b>Technology Leadership & Strategy</b></p>
+                <p>Indian Institute of Technology, Delhi</p>
+                <span>Aug 2026 – Present</span>
+            </div>
+        </div>
         <div class="education-card">
             <img src="assets/sppu.jpg" alt="SPPU Logo">
             <div>
@@ -3062,6 +3172,36 @@ Keep potential attackers at bay with a clean Active Directory.</span>
         document.getElementById("modalImage").src = "";
     }
 
+    // Impact Card Vertical Scroller
+    function startImpactScroller() {
+        const items = document.querySelectorAll('.impact-item-vertical');
+        let currentIndex = 0;
+
+        function showNextItem() {
+            // Remove active class from all items
+            items.forEach(item => item.classList.remove('active'));
+            
+            // Add active class to current item
+            items[currentIndex].classList.add('active');
+            
+            // Move to next item
+            currentIndex = (currentIndex + 1) % items.length;
+        }
+
+        // Show first item immediately
+        showNextItem();
+        
+        // Cycle through items every 2 seconds
+        setInterval(showNextItem, 2000);
+    }
+
+    // Start the scroller when page loads
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startImpactScroller);
+    } else {
+        startImpactScroller();
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         const videoCards = document.querySelectorAll('.video-card');
         
@@ -3177,6 +3317,7 @@ Keep potential attackers at bay with a clean Active Directory.</span>
         const sections = document.querySelectorAll('section');
         const heroSection = document.querySelector('.hero');
         const coverImage = document.getElementById('coverImage');
+        const impactCard = document.querySelector('.impact-card');
         
         // Check for saved section or URL hash
         const savedSection = localStorage.getItem('currentSection') || window.location.hash.substring(1) || '';
@@ -3190,6 +3331,8 @@ Keep potential attackers at bay with a clean Active Directory.</span>
         if (savedSection && document.getElementById(savedSection)) {
             document.getElementById(savedSection).style.display = 'block';
             if (coverImage) coverImage.style.display = 'none';
+            // Hide impact card on other pages
+            if (impactCard) impactCard.style.display = 'none';
             // Set active nav link on load
             navLinks.forEach(l => {
                 if (l.getAttribute('href') === '#' + savedSection) l.classList.add('active');
@@ -3197,6 +3340,8 @@ Keep potential attackers at bay with a clean Active Directory.</span>
         } else {
             if (heroSection) heroSection.style.display = 'flex';
             if (coverImage) coverImage.style.display = 'block';
+            // Show impact card only on About page
+            if (impactCard) impactCard.style.display = 'block';
             // Set About as active by default
             const aboutLink = document.querySelector('nav a[href="#"]');
             if (aboutLink) aboutLink.classList.add('active');
@@ -3224,6 +3369,9 @@ Keep potential attackers at bay with a clean Active Directory.</span>
                 navLinks.forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
                 
+                // Get impact card
+                const impactCard = document.querySelector('.impact-card');
+                
                 // Hide all sections and hero
                 sections.forEach(section => section.style.display = 'none');
                 if (heroSection) heroSection.style.display = 'none';
@@ -3235,10 +3383,14 @@ Keep potential attackers at bay with a clean Active Directory.</span>
                     targetSection.style.display = 'block';
                     // Cover image only shows on About page, hide for all other sections
                     if (coverImage) coverImage.style.display = 'none';
+                    // Hide impact card on all other pages
+                    if (impactCard) impactCard.style.display = 'none';
                 } else if (targetId === '' || targetId === 'home') {
                     // Show hero and cover for About page only
                     if (heroSection) heroSection.style.display = 'flex';
                     if (coverImage) coverImage.style.display = 'block';
+                    // Show impact card only on About page
+                    if (impactCard) impactCard.style.display = 'block';
                     localStorage.setItem('currentSection', '');
                 }
             });
